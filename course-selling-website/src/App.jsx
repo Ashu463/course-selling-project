@@ -7,26 +7,34 @@ import Admincourses from './Admincourses'
 import Courses from './Courses';
 import Course from './Course';
 import Landing from './Landing';
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
 function App(){
     
     return (
       <div style={{height : "100vh", width : "100vw", backgroundColor: "#eeeeee"}}>
         
         <div>
-          
-          <Router>
-            <Appbar></Appbar>
-            
+          <RecoilRoot>
+            <Router>
+              <Appbar></Appbar>
+              
 
-            <Routes>
-              <Route path='/' element = {<Landing />} />
-              <Route path = '/courses' element = {<Courses />} />
-              <Route path = '/courses/:courseId' element = {<Course />} />
-              <Route path='/signin' element = {<Signin/>} />
-              <Route path='/signup' element = {<Signup/>} />
-              <Route path='/addcourses' element = {<Admincourses/>} />
-            </Routes>
-          </Router>
+              <Routes>
+                <Route path='/' element = {<Landing />} />
+                <Route path = '/courses' element = {<Courses />} />
+                <Route path = '/courses/:courseId' element = {<Course />} />
+                <Route path='/signin' element = {<Signin/>} />
+                <Route path='/signup' element = {<Signup/>} />
+                <Route path='/addcourses' element = {<Admincourses/>} />
+              </Routes>
+            </Router>
+          </RecoilRoot>
 
         </div>
            
